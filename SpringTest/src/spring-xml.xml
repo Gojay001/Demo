@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:p="http://www.springframework.org/schema/p">
+
+    <!--set注入
+    <bean name="blog1" claBlogBlog">
+        <property name="id" value="1" />
+        <property name="title" value="test1" />
+    </bean>
+    -->
+
+    <!--set注入
+    <bean name="user1" claUserUser"
+        init-method="init" destroy-method="destroy">
+        <property name="id" value="1" />
+        <property name="name" value="admin1" />
+        <property name="blog" ref="blog1" />
+    </bean>
+    -->
+
+    <!--p名称空间注入-->
+    <bean name="blog2" class="xml.di.pojos.Blog" p:id="2" p:title="test2" />
+
+    <!--构造器注入 type、name、index除二义性-->
+    <bean name="user2" class="xml.di.pojos.User"
+        init-method="init" destroy-method="destroy">
+        <constructor-arg name="id" index="0" value="2" />
+        <constructor-arg type="java.lang.String" value="admin2" />
+        <constructor-arg index="2" ref="blog2" />
+    </bean>
+</beans>

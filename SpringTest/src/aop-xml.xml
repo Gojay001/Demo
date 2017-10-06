@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 配置目标对象和通知 -->
+    <bean name="userService" class="aop.xml.service.UserServiceImpl" />
+    <bean name="myAdvice" class="aop.xml.aspect.MyAdvice" />
+
+    <!-- 将通知织入目标对象 -->
+    <aop:config>
+        <!-- 配置切入点 -->
+        <aop:pointcut id="pointcut" expression="execution(* aop.xml.service.*ServiceImpl.*(..))" />
+        <!-- 设置通知 -->
+        <aop:aspect ref="myAdvice">
+            <aop:before method="before" pointcut-ref="pointcut" />
+            <aop:after-returning method="afterReturning" pointcut-ref="pointcut" />
+            <aop:around method="around" pointcut-ref="pointcut" />
+            <aop:after-throwing method="afterException" pointcut-ref="pointcut" />
+            <aop:after method="after" pointcut-ref="pointcut" />
+        </aop:aspect>
+    </aop:config>
+</beans>

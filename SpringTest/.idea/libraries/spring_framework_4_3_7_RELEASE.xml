@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="spring-framework-4.3.7.RELEASE">
+    <CLASSES>
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/spring-context-4.3.7.RELEASE.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/spring-core-4.3.7.RELEASE.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/spring-expression-4.3.7.RELEASE.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/commons-logging-1.2.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/junit-4.12.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/spring-test-4.3.7.RELEASE.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/org.hamcrest.core_1.3.0.v201303031735.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/spring-aop-4.3.7.RELEASE.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/spring-aspects-4.3.7.RELEASE.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/aopalliance-1.0.jar!/" />
+      <root url="jar://F:/SSM/spring-framework-4.3.7.RELEASE/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
