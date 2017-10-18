@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--
+    //使用非注解配置前端控制器：
+    //1、配置处理器映射器：要求在配置Handler类时指定bean的name属性，且name作为url
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+    //2、配置处理器适配器：要求所编写的Handler实现Controller接口（返回ModelAndView）
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    //3、配置视图解析器：使用InternalResourceViewResolver
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" />
+    //4、注册后端处理器
+    <bean id="userHandler" name="/user.action" class="mvc.controller.UserHandler" />
+    -->
+
+    <!--注解方式配置前端控制器-->
+    <!-- 开启spring组件扫描 -->
+    <context:component-scan base-package="cn.gojay.mvc.*" />
+    <!-- 启用spring mvc注解, 默认注解映射的支持 -->
+    <mvc:annotation-driven />
+    <!-- 加载静态资源文件 -->
+    <mvc:default-servlet-handler />
+    <!-- 默认的视图解析器  -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

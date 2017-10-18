@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jackson-annotations-2.5.0">
+    <CLASSES>
+      <root url="jar://F:/SSM/ssm_lib/jackson-annotations-2.5.0.jar!/" />
+      <root url="jar://F:/SSM/ssm_lib/jackson-core-2.5.4.jar!/" />
+      <root url="jar://F:/SSM/ssm_lib/jackson-databind-2.5.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
