@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace命名空间，作用就是对sql进行分类化管理,理解为sql隔离 -->
+<!--<mapper namespace="cn.gojay.mybatis.entity">-->
+<!--通过mapper接口实现映射-->
+<mapper namespace="cn.gojay.mybatis.mapper.UserMapper">
+    <!--定义resultMap
+	// 将SELECT id id_,name name_ FROM USER 和User类中的属性作一个映射关系
+	// type：resultMap最终映射的java对象类型,可以使用别名
+	// id：对resultMap的唯一标识
+    <resultMap type="User" id="userResultMap">
+        // id表示查询结果集中唯一标识
+        // column：查询出来的列名
+        // property：type指定的pojo类型中的属性名
+        // 最终resultMap对column和property作一个映射关系 （对应关系）
+        <id column="id_" property="id"/>
+        // result：对普通名映射定义
+        // column：查询出来的列名
+        // property：type指定的pojo类型中的属性名
+        // 最终resultMap对column和property作一个映射关系 （对应关系）
+        <result column="name_" property="name"/>
+    </resultMap>-->
+
+    <!-- 通过id查询用户表的记录 -->
+    <!-- 通过select执行数据库查询
+     id:标识映射文件中的sql，称为statement的id
+     将sql语句封装到mappedStatement对象中，所以将id称为statement的id
+     parameterType:指定输入参数的类型
+     #{}标示一个占位符,
+     #{value}其中value表示接收输入参数的名称，如果输入参数是简单类型，那么#{}中的值可以任意。
+     resultType：指定sql输出结果的映射的java对象类型，select指定resultType表示将单条记录映射成java对象
+     -->
+    <select id="getUserById" parameterType="int" resultType="User">
+        SELECT * FROM  user  WHERE id = #{id}
+    </select>
+
+    <!-- 根据用户名称模糊查询用户信息，可能返回多条
+	${}:表示拼接sql串，将接收到参数的内容不加任何修饰拼接在sql中。
+	使用${}拼接sql，引起 sql注入
+	${value}：接收输入参数的内容，如果传入类型是简单类型，${}中只能使用value
+	 -->
+    <select id="listUserByName" parameterType="java.lang.String" resultType="User">
+        SELECT * FROM user WHERE name LIKE '%${value}%'
+    </select>
+
+    <!-- 添加用户 -->
+    <insert id="insertUser" parameterType="User">
+        INSERT INTO user(id, name, password) values (#{id},#{name},#{password})
+    </insert>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+    <!-- 根据id更新用户
+    需要传入用户的id
+    需要传入用户的更新信息
+    parameterType指定user对象，包括 id和更新信息，注意：id必须存在
+    #{id}：从输入 user对象中获取id属性值
+     -->
+    <update id="updateUser" parameterType="user">
+        UPDATE user SET name = #{name}, password = #{password} where id = #{id}
+    </update>
+</mapper>
