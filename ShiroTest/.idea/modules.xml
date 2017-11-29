@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ShiroTest.iml" filepath="$PROJECT_DIR$/ShiroTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShiroTest-chapter2/ShiroTest-chapter2.iml" filepath="$PROJECT_DIR$/ShiroTest-chapter2/ShiroTest-chapter2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShiroTest-chapter3/ShiroTest-chapter3.iml" filepath="$PROJECT_DIR$/ShiroTest-chapter3/ShiroTest-chapter3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShiroTest-chapter4/ShiroTest-chapter4.iml" filepath="$PROJECT_DIR$/ShiroTest-chapter4/ShiroTest-chapter4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShiroTest-chapter5/ShiroTest-chapter5.iml" filepath="$PROJECT_DIR$/ShiroTest-chapter5/ShiroTest-chapter5.iml" />
     </modules>
   </component>
 </project>

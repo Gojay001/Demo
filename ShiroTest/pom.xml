@@ -16,5 +16,8 @@
 
   <modules>
       <module>ShiroTest-chapter2</module>
+      <module>ShiroTest-chapter3</module>
+      <module>ShiroTest-chapter4</module>
+      <module>ShiroTest-chapter5</module>
   </modules>
 </project>
